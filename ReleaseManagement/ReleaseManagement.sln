@@ -3,6 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReleaseManagement.Application", "ReleaseManagement.Application", "{EBE4D50E-327E-4068-BF70-17B6D3B4366C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReleaseManagement.Domain", "ReleaseManagement.Domain", "{3576FDB1-C259-4085-92DE-43A3AAAC273B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReleaseManagement.Infra.IoC", "ReleaseManagement.Infra.IoC", "{A5A3B942-A3D8-43AB-8906-11965CD8773C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReleaseManagement.Infra.Data", "ReleaseManagement.Infra.Data", "{5BD9CD5B-5D2B-4D60-8E29-EB90B2742756}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReleaseManagement.UI.Mvc", "ReleaseManagement.UI.Mvc", "{1C6D86F6-E254-4352-A862-C681F166653E}"
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
