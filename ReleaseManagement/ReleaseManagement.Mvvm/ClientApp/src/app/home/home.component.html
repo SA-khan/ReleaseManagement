@@ -1,14 +1,142 @@
-<h1>Hello, world!</h1>
-<p>Welcome to your new single-page application, built with:</p>
-<ul>
-  <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
-  <li><a href='https://angular.io/'>Angular</a> and <a href='http://www.typescriptlang.org/'>TypeScript</a> for client-side code</li>
-  <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
-</ul>
-<p>To help you get started, we've also set up:</p>
-<ul>
-  <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>
-  <li><strong>Angular CLI integration</strong>. In development mode, there's no need to run <code>ng serve</code>. It runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you modify any file.</li>
-  <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration automatically invokes <code>ng build</code> to produce minified, ahead-of-time compiled JavaScript files.</li>
-</ul>
-<p>The <code>ClientApp</code> subdirectory is a standard Angular CLI application. If you open a command prompt in that directory, you can run any <code>ng</code> command (e.g., <code>ng test</code>), or use <code>npm</code> to install extra packages into it.</p>
+<div id="Main">
+  <header id="header">
+    <div class="jumbotron text-center" id="mainer">
+      <br />
+      <br />
+      <img src="assets/images/release.png" class="rounded-circle" alt="Cinque Terre" width="304" height="236" />
+      <h1 style="font-size:64px;padding:2%;">Release Management Portal</h1>
+      <p style="font-size:32px;margin-bottom:3%;"><i><kbd style="padding:1%;">Reshaping the way we do things!</kbd></i></p>
+
+      <div class="container pt-3">
+        <div class="row">
+          <div class="col-sm-3">
+
+            <div id="LoinPanelCard" class="card" style="width:100%;min-height:100%;">
+              <div class="w3-container w3-white">
+                <img class="card-img-top" src="assets/images/member_login_1.png" alt="Card image" style="width:100%;background-color:White;" />
+              </div>
+              <div class="card-body">
+                <h4 class="card-title" style="font-size:32px;">
+                  Login Panel
+                </h4>
+                <p class="card-text">View, Add, Edit & Delete Release, Environment, Client...</p>
+                <a href="/authentication/login" class="btn btn-primary stretched-link" style="color:White;">Goto Login</a>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-sm-3">
+
+            <div id="AppOverViewCard" class="card" style="width:100%;min-height:100%;">
+              <div class="w3-container w3-white">
+                <br />
+                <img class="card-img-top" src="assets/images/application.png" alt="Card image" style="width:100%;background-color:White;" />
+              </div>
+              <div class="card-body">
+                <br />
+                <h4 class="card-title" style="font-size:32px;">App Overview</h4>
+                <p class="card-text">View the latest Application Overview</p>
+                <a href="AppOverview.aspx" class="btn btn-primary stretched-link" style="color:White;">View</a>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-sm-3">
+
+            <div id="EnvironmentOverviewCard" class="card" style="width:100%;min-height:100%;">
+              <div class="w3-container w3-white">
+                <br />
+                <img class="card-img-top" src="assets/images/environment.png" alt="Card image" style="width:100%;background-color:White;" />
+              </div>
+              <div class="card-body">
+                <h4 class="card-title" style="font-size:32px;">Environment Overview</h4>
+                <p class="card-text">View the latest Environments Overview</p>
+                <a href="EnvironmentInfo.aspx" class="btn btn-primary stretched-link" style="color:White;">View</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+
+            <div id="ReferencesCard" class="card" style="width:100%;min-height:100%;">
+              <div class="w3-container w3-white">
+                <br />
+                <br />
+                <br />
+                <img class="card-img-top" src="assets/images/references.png" alt="Card image" style="width:100%;background-color:White;" />
+                <br />
+                <br />
+              </div>
+              <div class="card-body">
+                <p></p>
+                <p></p>
+                <h4 class="card-title" style="font-size:32px;">References & Docs</h4>
+                <p class="card-text">View and Download the authentic References...</p>
+                <a href="References.aspx" class="btn btn-primary stretched-link" style="color:White;">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!--<div id="centerdivElement">-->
+
+  <div id="loader" class="lds-roller" style="position: absolute;top: 50%;left: 50%;margin-top: -50px;margin-left: -50px;width: 100px;height: 100px;"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  <p id="loaderText" style="position: absolute;top: 65%;left: 50%;margin-top: -50px;margin-left: -50px;width: 100px;height: 100px;color:white;font-family:'Segoe UI';font-size:large">Initializing</p>
+  <!--</div>-->
+  <!-- Setting Modal -->
+  <div class="modal fade" id="SettingModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header" style="background-color:gray;border:1px solid black;">
+          <h4 class="modal-title">Settings</h4>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body" style="border:1px solid black;">
+          <table width="100%">
+            <tr>
+              <td colspan="2">Select Theme</td>
+              <td>
+                <select class="form-control" id="sel1" name="sellist1">
+                  <option>Classic</option>
+                  <option>Dark</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">Select Region</td>
+              <td>
+                <select class="form-control" id="sel1" name="sellist1">
+                  <option selected="selected">Pakistan</option>
+                  <option>UAE</option>
+                  <option>UK</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">Select Language</td>
+              <td>
+                <select class="form-control" id="sel1" name="sellist1">
+                  <option selected="selected">English</option>
+                  <option>Urdu</option>
+                  <option>Sindhi</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer" style="background-color:gray;border:1px solid black;">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

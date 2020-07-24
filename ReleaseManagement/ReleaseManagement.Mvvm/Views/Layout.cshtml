@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Release Management - @ViewBag.Title</title>
+</head>
+<body>
+    <nav id="navbar" class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            </button>
+            <a class="navbar-brand" href="/">Release Management</a>
+            <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav mr-auto">
+                    <li class="nav-item"><a href="/" class="nav-link">App Overview</a></li>
+                    <li class="nav-item"><a href="/Home/About" class="nav-link">Environment Overview</a></li>
+                    <li class="nav-item"><a href="/Home/Contact" class="nav-link">References</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right mr-auto">
+                    <!--<li class="nav-item"><a href="/Account/Login" id="loginLink" class="nav-link">Log in</a></li>-->
+                    <li class="nav-item">
+                        <form class="navbar-form">
+                            <input style="width:250px;float:left;" id="txtSearch" class="form-control mr-sm-2" placeholder="Search" />
+                            <button style="width:100px;margin-left:3px;float:left;" id="btnSearch" type="button" class="btn btn-success" onclick="mySearchFunction()"><asp:Localize ID="LocalSearch" runat="server"><span class="glyphicon glyphicon-search"></span> Search</asp:Localize></button>
+                        </form>
+                    </li>
+                    <li>
+                        <!--<button id="settings">-->
+                        <img id="imgSettings" src="/images/Settings.png" width="40" style="margin-left:5px;padding:2px;" />
+                        <!--</button>-->
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Setting Modal -->
+    <div class="modal fade" id="SettingModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header" style="background-color:gray;border:1px solid black;">
+                    <h4 class="modal-title">Settings</h4>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body" style="border:1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td colspan="2">Select Theme</td>
+                            <td>
+                                <select class="form-control" id="sel1" name="sellist1">
+                                    <option>Classic</option>
+                                    <option>Dark</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Select Region</td>
+                            <td>
+                                <select class="form-control" id="sel1" name="sellist1">
+                                    <option selected="selected">Pakistan</option>
+                                    <option>UAE</option>
+                                    <option>UK</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Select Language</td>
+                            <td>
+                                <select class="form-control" id="sel1" name="sellist1">
+                                    <option selected="selected">English</option>
+                                    <option>Urdu</option>
+                                    <option>Sindhi</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer" style="background-color:gray;border:1px solid black;">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>
