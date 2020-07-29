@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ReleaseManagement.Infra.Data.Context;
+using ReleaseManagement.Infra.IoC;
 
 namespace ReleaseManagement.Mvvm
 {
@@ -50,6 +51,9 @@ namespace ReleaseManagement.Mvvm
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            RegisterServices(services);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -99,6 +103,15 @@ namespace ReleaseManagement.Mvvm
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+
+
+
         }
+
+        private static void RegisterServices(IServiceCollection services)
+        {
+            DependencyContainer.RegisterServices(services);
+        }
+
     }
 }

@@ -56,6 +56,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ReleaseManagement.Infra.Data\ReleaseManagement.Infra.Data.csproj" />
+    <ProjectReference Include="..\ReleaseManagement.Infra.IoC\ReleaseManagement.Infra.IoC.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
