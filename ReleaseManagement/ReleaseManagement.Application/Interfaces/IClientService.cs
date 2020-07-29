@@ -7,6 +7,6 @@ namespace ReleaseManagement.Application.Interfaces
 {
     public interface IClientService
     {
-        IEnumerable<ClientViewModel> GetClients();
+        ClientViewModel GetClients();
     }
 }
