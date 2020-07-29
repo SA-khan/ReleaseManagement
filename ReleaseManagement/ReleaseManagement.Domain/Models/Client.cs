@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ReleaseManagement.Domain.Models
 {
-    class Client
+    public class Client
     {
         public int Id { get; set; }
         public string Name { get; set; }

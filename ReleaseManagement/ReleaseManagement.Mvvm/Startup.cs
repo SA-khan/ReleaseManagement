@@ -11,6 +11,7 @@ using ReleaseManagement.Mvvm.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ReleaseManagement.Infra.Data.Context;
 
 namespace ReleaseManagement.Mvvm
 {
@@ -28,10 +29,14 @@ namespace ReleaseManagement.Mvvm
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("ReleaseManagementDBConnection")));
+                    Configuration.GetConnectionString("ReleaseManagementIdentityDBConnection")));
 
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddDbContext<ReleaseManagementDBContext>(options => {
+                options.UseSqlServer(Configuration.GetConnectionString("ReleaseManagementMainDBConnection"));
+            });
 
             services.AddIdentityServer()
                 .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
