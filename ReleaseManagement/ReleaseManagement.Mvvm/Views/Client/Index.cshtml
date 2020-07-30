@@ -1,0 +1,38 @@
+﻿@model ReleaseManagement.Application.ViewModels.ClientViewModel
+
+<style>
+    .client-content {
+        padding:24px;
+    }
+    .client-image {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 230px;
+        width: 230px;
+    }
+    .client-image-container {
+        padding: 8px;
+        background: #fff;
+        border-radius: 2px;
+        display: inline-block;
+        height: 250px;
+        width: 250px;
+        margin: 12px;
+        position: relative;
+        box-shadow: 0 10px 18px rgba(0,0,0,0.2), 0 5px 5px rgba(0,0,0,0.2)
+    }
+</style>
+
+<div class="container body-content">
+    <div class="row client-content">
+        @foreach (var client in Model.Clients)
+        {
+            <div class="client-image-container">
+                <div class="client-image" style="background-image:url(@client.Url)"></div>
+            </div>
+
+            <span>@client.Name</span>
+        }
+    </div>
+</div>
